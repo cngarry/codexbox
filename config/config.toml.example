@@ -1,0 +1,24 @@
+# 基于 DeepSeek 官方 Codex 接入文档的配置示例。
+# 来源：https://api-docs.deepseek.com/zh-cn/quick_start/agent_integrations/codex
+# 复制到 ~/.codex/config.toml；已有配置时合并，不要覆盖 MCP、项目信任等本机设置。
+# 将 <你的 DeepSeek API Key> 替换为真实值，不要把填写后的文件提交到 Git。
+
+model = "deepseek-flash"
+model_provider = "deepseek"
+preferred_auth_method = "apikey"
+forced_login_method = "api"
+model_reasoning_effort = "high"
+web_search = "disabled"
+show_raw_agent_reasoning = true
+# 手写配置时需先按 DeepSeek 官方文档创建该模型目录文件。
+model_catalog_json = "~/.codex/models.json"
+
+[model_providers.deepseek]
+name = "deepseek"
+base_url = "https://api.deepseek.com/"
+wire_api = "responses"
+experimental_bearer_token = "<你的 DeepSeek API Key>"
+
+[desktop]
+# 已有 [desktop] 时只合并此字段，不要重复创建 table。
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "ultra", "max"]

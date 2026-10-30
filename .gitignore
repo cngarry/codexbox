@@ -1,0 +1,11 @@
+# Local runtime and sensitive data
+runtime/
+config/local/
+config/config.toml
+config/AGENTS.md
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
